@@ -48,8 +48,6 @@ const server = http.createServer((req, res) => {
 
     const {query, pathname} =  url.parse(req.url, true);
 
-
-
     // Overview page    
     if (pathname === '/' || pathname === '/overview') {
         res.writeHead(200, {'Content-type':'text/html'});
@@ -58,7 +56,6 @@ const server = http.createServer((req, res) => {
         const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHTML); 
 
         res.end (output)
-
 
     // Product page    
     } else if (pathname === '/product') {
